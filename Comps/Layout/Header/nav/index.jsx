@@ -1,0 +1,92 @@
+import Link from 'next/link';
+import styled from 'styled-components';
+
+import { LanguageSelector } from '@/utils/context';
+
+const Container = styled.nav`
+  ${({ rtl }) => (rtl ? 'margin-right: auto' : 'margin-left: auto;')};
+  & > ul {
+    display: flex;
+    list-style-type: none;
+    & > li {
+      margin: 0px 20px;
+    }
+  }
+
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.large}px) {
+    position: relative;
+    order: 4;
+
+    width: 100%;
+    height: ${({ MenuOpen }) => (MenuOpen ? '200px' : '0px')};
+    margin: 0;
+    overflow: hidden;
+
+    transition: height 0.26s ease;
+
+    & > ul {
+      flex-direction: column;
+
+      border-radius: 5px;
+      background-color: ${({ theme }) => theme.colors.secondary.main};
+    }
+  }
+`;
+
+const StyledLink = styled(Link)`
+  color: ${({ active, theme }) =>
+    active ? theme.colors.primary.first_shade : theme.colors.secondary.main};
+  transition: color 0.5s;
+  font-weight: bold;
+
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.primary.first_shade};
+  }
+
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.large}px) {
+    display: block;
+
+    width: 100%;
+    padding: 10px 0px;
+  }
+`;
+
+function Navigator({ MenuOpen }) {
+  return (
+    <Container rtl={LanguageSelector(true)} MenuOpen={MenuOpen}>
+      <ul>
+        <li>
+          <StyledLink active="true" href="/">
+            {LanguageSelector('الرئيسية', 'Accueil')}
+          </StyledLink>
+        </li>
+        <li>
+          <StyledLink href="/#">
+            {LanguageSelector('معلومات عنا', 'à propos de nous')}
+          </StyledLink>
+        </li>
+        <li>
+          <StyledLink href="/#">
+            {LanguageSelector('خدمات', 'Services')}
+          </StyledLink>
+        </li>
+
+        <li>
+          <StyledLink href="/#">
+            {LanguageSelector('المشاريع', 'projets')}
+          </StyledLink>
+        </li>
+        <li>
+          <StyledLink href="/#">
+            {LanguageSelector('اتصل بنا', 'Contactez-nous')}
+          </StyledLink>
+        </li>
+      </ul>
+    </Container>
+  );
+}
+
+export default Navigator;

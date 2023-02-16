@@ -1,5 +1,19 @@
 import Head from 'next/head';
 
+import CounterSection from '@/Comps/Home/CountersSection';
+import EighthSection from '@/Comps/Home/EighthSection';
+import HowToOrder from '@/Comps/Home/HowToOrder';
+import NinthSection from '@/Comps/Home/NinthSection';
+import SupportBrand from '@/Comps/Home/SupportBrand';
+import Testimonials from '@/Comps/Home/Testimonials';
+import WhatWeOffer from '@/Comps/Home/WhatWeOfferSection';
+import WhyChooseUs from '@/Comps/Home/WhyChooseUs';
+import FristSection from '@/Comps/Home/firstSection';
+import FourthSection from '@/Comps/Home/fourthSection';
+import SecondSection from '@/Comps/Home/secondSection';
+import ThirdSection from '@/Comps/Home/thirdSection';
+import { Main } from '@/utils/atoms';
+
 export default function Home() {
   return (
     <>
@@ -9,7 +23,20 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>Here Info</main>
+      <Main>
+        <FristSection />
+        <SecondSection />
+        <ThirdSection />
+        <FourthSection />
+        <CounterSection />
+        <WhatWeOffer />
+        <WhyChooseUs />
+        <EighthSection />
+        <NinthSection />
+        <HowToOrder />
+        <Testimonials />
+        <SupportBrand />
+      </Main>
     </>
   );
 }
