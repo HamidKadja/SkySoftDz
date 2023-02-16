@@ -26,7 +26,8 @@
     "react-modal": "^3.16.1",
     "react-player": "^2.11.2",
     "react-responsive": "^9.0.2",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "prettier": "^2.8.4"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.0.0",
@@ -35,8 +36,8 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.28.0",
-    "prettier": "^2.8.4"
+    "eslint-plugin-react": "^7.28.0"
+    
   },
   "resolutions": {
     "styled-components": "^5"
