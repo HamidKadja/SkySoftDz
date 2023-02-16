@@ -65,7 +65,7 @@ const StyledButton = styled(Button)`
 `;
 
 function WhatWeOffer() {
-  const [ref, InView] = ElementHasBeenInView(0.3);
+  const [ref, InView] = ElementHasBeenInView(0.2);
 
   return (
     <Container>
