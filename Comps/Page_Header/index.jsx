@@ -66,7 +66,7 @@ const PageTitleContainer = styled.div`
   color: ${({ theme }) => theme.colors.secondary.main};
 
   & > h1 {
-    text-align: center;
+    text-align: start;
     text-transform: capitalize;
 
     font-size: 50px;
@@ -118,7 +118,7 @@ const Nav = styled.div`
   }
 `;
 
-function PageHeader({ Title }) {
+function PageHeader({ Title, ImageUrl }) {
   const rtl = LanguageSelector(true);
   const [ref, InView] = ElementHasBeenInView(0.3);
 
@@ -141,7 +141,7 @@ function PageHeader({ Title }) {
           </Nav>
         </PageTitleContainer>
         <ImageContainer>
-          <Image fill src="/about_header.webp" alt="" />
+          <Image fill src={ImageUrl} alt="" />
         </ImageContainer>
       </StyledSubContainer>
     </Container>

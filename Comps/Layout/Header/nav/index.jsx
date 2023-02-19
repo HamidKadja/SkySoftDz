@@ -72,18 +72,17 @@ function Navigator({ MenuOpen }) {
           </StyledLink>
         </li>
         <li>
-          <StyledLink href="/#">
+          <StyledLink active={route === '/services'} href="/services">
             {LanguageSelector('خدمات', 'Services')}
           </StyledLink>
         </li>
-
         <li>
-          <StyledLink href="/#">
+          <StyledLink active={route === '/project'} href="/project">
             {LanguageSelector('المشاريع', 'projets')}
           </StyledLink>
         </li>
         <li>
-          <StyledLink href="/#">
+          <StyledLink active={route === '/contact'} href="/contact">
             {LanguageSelector('اتصل بنا', 'Contactez-nous')}
           </StyledLink>
         </li>

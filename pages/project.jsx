@@ -1,13 +1,13 @@
 import Head from 'next/head';
 import styled from 'styled-components';
 
-import OurValue from '@/Comps/About/Our_value';
-import Team from '@/Comps/About/Team';
-import CountersSection from '@/Comps/Home/CountersSection';
 import SupportBrand from '@/Comps/Home/SupportBrand';
+import Testimonials from '@/Comps/Home/Testimonials';
+import FourthSection from '@/Comps/Home/fourthSection';
 import SecondSection from '@/Comps/Home/secondSection';
-import ThirdSection from '@/Comps/Home/thirdSection';
 import PageHeader from '@/Comps/Page_Header';
+import AboutProject from '@/Comps/Project/About_Project';
+import LatestProject from '@/Comps/Project/Latest_Project';
 import { LanguageSelector } from '@/utils/context';
 
 const Spacer = styled.div`
@@ -15,8 +15,8 @@ const Spacer = styled.div`
   height: 100px;
 `;
 
-function About() {
-  const Title = LanguageSelector('معلومات عنا', 'à propos de nous');
+function Project() {
+  const Title = LanguageSelector('مشروع', 'Projects');
 
   return (
     <div>
@@ -27,17 +27,17 @@ function About() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <PageHeader Title={Title} ImageUrl="/about_header.webp" />
+        <PageHeader Title={Title} ImageUrl="/projects_header.webp" />
         <Spacer />
+        <AboutProject />
+        <LatestProject />
+        <FourthSection />
         <SecondSection />
-        <ThirdSection />
-        <OurValue />
-        <CountersSection />
-        <Team />
+        <Testimonials />
         <SupportBrand />
       </main>
     </div>
   );
 }
 
-export default About;
+export default Project;

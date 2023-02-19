@@ -1,12 +1,11 @@
 import Head from 'next/head';
 import styled from 'styled-components';
 
-import OurValue from '@/Comps/About/Our_value';
-import Team from '@/Comps/About/Team';
 import CountersSection from '@/Comps/Home/CountersSection';
-import SupportBrand from '@/Comps/Home/SupportBrand';
-import SecondSection from '@/Comps/Home/secondSection';
-import ThirdSection from '@/Comps/Home/thirdSection';
+import Testimonials from '@/Comps/Home/Testimonials';
+import WhatWeOffer from '@/Comps/Home/WhatWeOfferSection';
+import WhyChooseUs from '@/Comps/Home/WhyChooseUs';
+import FourthSection from '@/Comps/Home/fourthSection';
 import PageHeader from '@/Comps/Page_Header';
 import { LanguageSelector } from '@/utils/context';
 
@@ -15,8 +14,8 @@ const Spacer = styled.div`
   height: 100px;
 `;
 
-function About() {
-  const Title = LanguageSelector('معلومات عنا', 'à propos de nous');
+function Services() {
+  const Title = LanguageSelector('خدمات', 'Prestations de service');
 
   return (
     <div>
@@ -27,17 +26,16 @@ function About() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <PageHeader Title={Title} ImageUrl="/about_header.webp" />
+        <PageHeader Title={Title} ImageUrl="/services_header.webp" />
         <Spacer />
-        <SecondSection />
-        <ThirdSection />
-        <OurValue />
+        <WhatWeOffer />
+        <FourthSection />
         <CountersSection />
-        <Team />
-        <SupportBrand />
+        <WhyChooseUs />
+        <Testimonials />
       </main>
     </div>
   );
 }
 
-export default About;
+export default Services;
