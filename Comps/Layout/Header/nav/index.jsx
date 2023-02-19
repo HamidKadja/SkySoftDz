@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 
 import { LanguageSelector } from '@/utils/context';
@@ -55,16 +56,18 @@ const StyledLink = styled(Link)`
 `;
 
 function Navigator({ MenuOpen }) {
+  const { route } = useRouter();
+
   return (
     <Container rtl={LanguageSelector(true)} MenuOpen={MenuOpen}>
       <ul>
         <li>
-          <StyledLink active="true" href="/">
+          <StyledLink active={route === '/'} href="/">
             {LanguageSelector('الرئيسية', 'Accueil')}
           </StyledLink>
         </li>
         <li>
-          <StyledLink href="/#">
+          <StyledLink active={route === '/about'} href="/about">
             {LanguageSelector('معلومات عنا', 'à propos de nous')}
           </StyledLink>
         </li>
