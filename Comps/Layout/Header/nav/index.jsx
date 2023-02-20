@@ -19,7 +19,7 @@ const Container = styled.nav`
     order: 4;
 
     width: 100%;
-    height: ${({ MenuOpen }) => (MenuOpen ? '200px' : '0px')};
+    max-height: ${({ MenuOpen }) => (MenuOpen ? '400px' : '0px')};
     margin: 0;
     overflow: hidden;
 
