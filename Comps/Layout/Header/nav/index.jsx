@@ -23,7 +23,7 @@ const Container = styled.nav`
     margin: 0;
     overflow: hidden;
 
-    transition: height 0.26s ease;
+    transition: max-height 0.26s ease;
 
     & > ul {
       flex-direction: column;
